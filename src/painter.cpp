@@ -33,7 +33,6 @@ namespace painting{
     }
 
     void Painter::addPaintings(Surface surface, Paint *paint, int price){
-        std::cout<<price<<std::endl;
         if(noOfPaintings < 10){
             Painting p(noOfPaintings, surface, paint, price);
             paintingVector.push_back(p);

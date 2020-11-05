@@ -11,7 +11,7 @@ namespace painting{
     surface(newSurface),
     paint(newPaint)
     {
-        std::cout<<"Painting creation: " << newIndex << " "<< newSurface.printSurfaceType() << " "<< newPaint << " "<< newPrice<< std::endl;
+        //std::cout<<"Painting creation with custom constructor: " << newIndex << " "<< newSurface.printSurfaceType() << " "<< newPaint << " "<< newPrice<< std::endl;
     }
 
 
@@ -19,7 +19,9 @@ namespace painting{
         surface(object.surface),
         paint(object.paint),
         price(object.price),
-        index(object.index){}
+        index(object.index){
+            //std::cout<<"Painting creation with copy constructor: " << object.index << " "<< surface.printSurfaceType() << " "<< object.paint << " "<< object.price<< std::endl;
+        }
 
     void Painting::paintThePainting(){
         surface.prepareSurface();
