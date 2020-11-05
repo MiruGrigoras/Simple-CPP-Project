@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/miru/Documents/IEP/Proiect/iepProject/libs/paint.hpp
+
+/home/miru/Documents/IEP/Proiect/iepProject/libs/painter.hpp
+../libs/painting.hpp
+/home/miru/Documents/IEP/Proiect/iepProject/libs/painting.hpp
+vector
+-
+
+/home/miru/Documents/IEP/Proiect/iepProject/libs/painting.hpp
+../libs/surface.hpp
+/home/miru/Documents/IEP/Proiect/iepProject/libs/surface.hpp
+../libs/paint.hpp
+/home/miru/Documents/IEP/Proiect/iepProject/libs/paint.hpp
+
+/home/miru/Documents/IEP/Proiect/iepProject/libs/surface.hpp
+string
+-
+
+/home/miru/Documents/IEP/Proiect/iepProject/src/painter.cpp
+../libs/painting.hpp
+/home/miru/Documents/IEP/Proiect/iepProject/libs/painting.hpp
+../libs/paint.hpp
+/home/miru/Documents/IEP/Proiect/iepProject/libs/paint.hpp
+../libs/surface.hpp
+/home/miru/Documents/IEP/Proiect/iepProject/libs/surface.hpp
+../libs/painter.hpp
+/home/miru/Documents/IEP/Proiect/iepProject/libs/painter.hpp
+vector
+-
+iostream
+-
+
