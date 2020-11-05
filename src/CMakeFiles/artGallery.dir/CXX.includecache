@@ -6,33 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/miru/Documents/IEP/Proiect/iepProject/libs/paint.hpp
-
-/home/miru/Documents/IEP/Proiect/iepProject/libs/painter.hpp
-../libs/painting.hpp
-/home/miru/Documents/IEP/Proiect/iepProject/libs/painting.hpp
-vector
--
-
-/home/miru/Documents/IEP/Proiect/iepProject/libs/painting.hpp
-../libs/surface.hpp
-/home/miru/Documents/IEP/Proiect/iepProject/libs/surface.hpp
-../libs/paint.hpp
-/home/miru/Documents/IEP/Proiect/iepProject/libs/paint.hpp
-
 /home/miru/Documents/IEP/Proiect/iepProject/libs/surface.hpp
 string
 -
 
-/home/miru/Documents/IEP/Proiect/iepProject/src/main.cpp
+/home/miru/Documents/IEP/Proiect/iepProject/src/surface.cpp
 ../libs/surface.hpp
 /home/miru/Documents/IEP/Proiect/iepProject/libs/surface.hpp
-../libs/painter.hpp
-/home/miru/Documents/IEP/Proiect/iepProject/libs/painter.hpp
-../libs/paint.hpp
-/home/miru/Documents/IEP/Proiect/iepProject/libs/paint.hpp
-../libs/painting.hpp
-/home/miru/Documents/IEP/Proiect/iepProject/libs/painting.hpp
 iostream
+-
+string
 -
 

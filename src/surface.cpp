@@ -3,7 +3,7 @@
 #include <string>
 
 namespace painting{
-    Surface::Surface(SurfaceType type){ surfaceType = type;}
+    Surface::Surface(SurfaceType type):surfaceType(type){}
 
     Surface::Surface(const Surface &object): surfaceType(object.surfaceType){}
 

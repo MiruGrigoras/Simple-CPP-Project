@@ -12,13 +12,12 @@ namespace painting{
 
     Painter::Painter(): paintingVector({}),
     noOfPaintings(0),
-    profits(0){ }
+    profits(0){}
 
     Painter::Painter(const Painter &object): 
     paintingVector(object.paintingVector), 
     profits(object.profits),
-    noOfPaintings(object.noOfPaintings){
-    }
+    noOfPaintings(object.noOfPaintings){}
 
     void Painter::addPaintings(Painting p){
         std::cout<<"Adding paintings: " << p.index << " "<< p.surface.printSurfaceType() << " "<< p.paint << " "<< p.price<< std::endl;
