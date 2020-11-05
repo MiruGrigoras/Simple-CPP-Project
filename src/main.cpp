@@ -6,8 +6,28 @@
 
 using namespace painting;
 
-int main(){
+class NoCopyItem
+{
+private:
+   NoCopyItem(const NoCopyItem &);
+   NoCopyItem& operator=(const NoCopyItem &);
+public:
+    NoCopyItem(){};
+    ~NoCopyItem(){};
+};
 
+class Main : private NoCopyItem
+{
+private:
+   Main(const Main &){};
+   Main& operator=(const Main &);
+public:
+    Main(){};
+    ~Main(){};
+    void execute();
+};
+
+void Main::execute(){
     Surface canvas(Canvas);
     Surface paper(Paper);
     Surface cardboard(Cardboard);
@@ -37,5 +57,13 @@ int main(){
 
     std::cout<<std::endl<< "After selling painting no. 0: " << std::endl;
     painter.printPaintings();
+}
+
+int main(){
+    Main m1;
+    //Main m(m1);  -- cannot be done since the copy constructor is private
+    //Main m=m1; --cannot be done since the copy assignment cosntructor is private
+    Main m;
+    m.execute();
     return 0;
 }
