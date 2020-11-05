@@ -5,12 +5,10 @@
 namespace painting{
     Surface::Surface(SurfaceType type){ surfaceType = type;}
 
-    Surface::Surface(const Surface &object){ 
-        surfaceType = object.surfaceType;
-    }
+    Surface::Surface(const Surface &object): surfaceType(object.surfaceType){}
 
     void Surface::prepareSurface(){ 
-        std::cout << "Gesso has been added on the " << surfaceType << std::endl; }
+        std::cout << "Gesso has been added on the " << this->printSurfaceType() << std::endl; }
 
     std::string Surface::printSurfaceType(){
         switch (this->surfaceType)

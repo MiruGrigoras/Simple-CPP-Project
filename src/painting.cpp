@@ -5,15 +5,21 @@
 
 
 namespace painting{
-    Painting::Painting(int newIndex, Surface newSurface, Paint *newPaint, int newPrice)
+    Painting::Painting(int newIndex, Surface newSurface, Paint *newPaint, int newPrice):
+    index(newIndex),
+    price(newPrice),
+    surface(newSurface),
+    paint(newPaint)
     {
-        index = newIndex;
-        surface = newSurface;
-        paint = newPaint;
-        price = newPrice;
+        std::cout<<"Painting creation: " << newIndex << " "<< newSurface.printSurfaceType() << " "<< newPaint << " "<< newPrice<< std::endl;
     }
 
-    Painting::Painting(const Painting &object){}
+
+    Painting::Painting(const Painting &object):
+        surface(object.surface),
+        paint(object.paint),
+        price(object.price),
+        index(object.index){}
 
     void Painting::paintThePainting(){
         surface.prepareSurface();

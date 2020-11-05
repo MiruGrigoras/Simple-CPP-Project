@@ -10,17 +10,18 @@
 
 namespace painting{
 
-    Painter::Painter(): paintingVector({}){ noOfPaintings = 0; profits = 0;}
+    Painter::Painter(): paintingVector({}),
+    noOfPaintings(0),
+    profits(0){ }
 
     Painter::Painter(const Painter &object): 
     paintingVector(object.paintingVector), 
     profits(object.profits),
     noOfPaintings(object.noOfPaintings){
-        //profits = object.profits;
-        //noOfPaintings = object.noOfPaintings;
     }
 
     void Painter::addPaintings(Painting p){
+        std::cout<<"Adding paintings: " << p.index << " "<< p.surface.printSurfaceType() << " "<< p.paint << " "<< p.price<< std::endl;
         if(noOfPaintings < 10){
             paintingVector.push_back(p);
             noOfPaintings ++;
@@ -32,6 +33,7 @@ namespace painting{
     }
 
     void Painter::addPaintings(Surface surface, Paint *paint, int price){
+        std::cout<<price<<std::endl;
         if(noOfPaintings < 10){
             Painting p(noOfPaintings, surface, paint, price);
             paintingVector.push_back(p);
@@ -48,7 +50,9 @@ namespace painting{
             int count = 0;
             for (i = paintingVector.begin(); i!= paintingVector.end(); i++){
                 if(count == index){
+                    profits += i->price;
                     i = paintingVector.erase(i);
+                    noOfPaintings--;
                     break;
                 }
                 else{
@@ -62,7 +66,7 @@ namespace painting{
     }
 
     void Painter::printPaintings(){
-        std::cout << "The painter has " << this->noOfPaintings << " paintings."<<std::endl;
+        std::cout << "The painter has " << this->noOfPaintings << " paintings and profits "<<this->profits<<std::endl;
         for (auto it: this->paintingVector){
             it.printPainting();
         }
