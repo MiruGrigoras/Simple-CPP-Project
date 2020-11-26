@@ -18,7 +18,7 @@ namespace painting{
         Painting(){price = 50; index = 10;};
         ~Painting(){};
         Painting& operator=(const Painting& pnt);
-        Painting& operator+=(const Painting& pnt);
+        Painting& operator+=(const Painting pnt);
         void paintThePainting();
         void printPainting();
     };

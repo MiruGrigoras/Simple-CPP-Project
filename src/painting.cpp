@@ -25,13 +25,23 @@ namespace painting{
 
 
     Painting& Painting::operator=(const Painting& pnt){
+        /* The unsafe method:
+
         this->surface = pnt.surface;
         this->paint = pnt.paint;
         this->price = pnt.price;
         this->index = pnt.index+1;
+        
+        The safe method:*/
+
+        Painting temp(pnt);
+        this->surface = temp.surface;
+        this->paint = temp.paint;
+        this->price = temp.price;
+        this->index = temp.index+1;
         return *this;
     }
-    Painting& Painting::operator+=(const Painting& pnt){
+    Painting& Painting::operator+=(const Painting pnt){ //pass by value for safety
         this->surface = pnt.surface;
         this->paint = pnt.paint;
         this->price = this->price + pnt.price;
