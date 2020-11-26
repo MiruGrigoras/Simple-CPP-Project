@@ -1,0 +1,3 @@
+/home/miru/Documents/IEP/Proiect/iepProject/CMakeFiles/edit_cache.dir
+/home/miru/Documents/IEP/Proiect/iepProject/CMakeFiles/rebuild_cache.dir
+/home/miru/Documents/IEP/Proiect/iepProject/CMakeFiles/artGallery.dir

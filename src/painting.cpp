@@ -23,6 +23,22 @@ namespace painting{
             //std::cout<<"Painting creation with copy constructor: " << object.index << " "<< surface.printSurfaceType() << " "<< object.paint << " "<< object.price<< std::endl;
         }
 
+
+    Painting& Painting::operator=(const Painting& pnt){
+        this->surface = pnt.surface;
+        this->paint = pnt.paint;
+        this->price = pnt.price;
+        this->index = pnt.index+1;
+        return *this;
+    }
+    Painting& Painting::operator+=(const Painting& pnt){
+        this->surface = pnt.surface;
+        this->paint = pnt.paint;
+        this->price = this->price + pnt.price;
+        this->index = this->index + pnt.index;
+        return *this;
+    }
+
     void Painting::paintThePainting(){
         surface.prepareSurface();
         paint->addExtender();
