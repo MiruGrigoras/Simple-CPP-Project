@@ -41,7 +41,7 @@ namespace painting{
         this->index = temp.index+1;
         return *this;
     }
-    Painting& Painting::operator+=(const Painting pnt){ //pass by value for safety
+    Painting& Painting::operator+=(Painting pnt){ //pass by value for safety
         this->surface = pnt.surface;
         this->paint = pnt.paint;
         this->price = this->price + pnt.price;
@@ -51,7 +51,6 @@ namespace painting{
 
     void Painting::paintThePainting(){
         surface.prepareSurface();
-        paint->addExtender();
         std::cout << "Painting the painting. (Inception)" << std::endl;
     }
 

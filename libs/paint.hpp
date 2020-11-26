@@ -1,5 +1,6 @@
 #ifndef PAINT_H
 #define PAINT_H
+#include <iostream>
 
 namespace painting{
 
@@ -8,7 +9,6 @@ namespace painting{
     public:
         Paint(){};
         virtual ~Paint(){};
-        virtual void addExtender() = 0;
     };
 
     class WaterBasedPaint: public Paint
@@ -17,16 +17,19 @@ namespace painting{
         WaterBasedPaint(){};
         WaterBasedPaint(const WaterBasedPaint &object);
         ~WaterBasedPaint(){};
-        void addExtender();
     };
 
     class NonWaterBasedPaint: public Paint
     {
+    private:
+        std::string extender;
     public:
-        NonWaterBasedPaint(){};
+        NonWaterBasedPaint():extender("Extender Paint Medium"){};
         NonWaterBasedPaint(const NonWaterBasedPaint &object);
+        NonWaterBasedPaint& operator=(const NonWaterBasedPaint &nwbp);
         ~NonWaterBasedPaint(){};
         void addTopCoat();
+        void addExtender(){std::cout<<"Added "<< extender << ".\n";};
     };
 
     class AcrylicPaint: public NonWaterBasedPaint
@@ -35,16 +38,19 @@ namespace painting{
         AcrylicPaint(){};
         AcrylicPaint(const AcrylicPaint &object); 
         ~AcrylicPaint(){};
-        void addExtender();
     };
 
     class OilPaint: public NonWaterBasedPaint
     {
+    private:
+        std::string color;
     public:
         OilPaint(){};
+        OilPaint(std::string mycolor):color(mycolor){};
+        OilPaint& operator=(const OilPaint &op);
         OilPaint(const OilPaint &object);
         ~OilPaint(){};
-        void addExtender();
+        void getColor(){std::cout<<"Color: "<< color << ".\n";};
     };
 }
 

@@ -62,16 +62,26 @@ void Main::execute1(){
 
 void Main::execute2(){
     Surface canvas(Canvas);
-    Surface paper(Paper);
-    Surface cardboard(Cardboard);
-    AcrylicPaint *ap;
-    OilPaint *op;
-    WaterBasedPaint *wp;
+    OilPaint op1("blue"), op3, *op4;
+
+    std::cout<< "Op1: \n";
+    op1.addExtender();
+    op1.getColor();
+
+    std::cout<< "\nOp2: \n";
+    OilPaint op2(op1);
+    op2.addExtender();
+    op2.getColor();
+
+    std::cout<< "\nOp3: \n";
+    op3=op2;
+    op3.addExtender();
+    op3.getColor();
     
-    Painting p1(0, canvas, op, 100);
+    Painting p1(0, canvas, op4, 100);
     Painting p2, p3, p4, p5;
 
-    std::cout<< "P1 before assignation: " << &p1 << " " << p1.surface.printSurfaceType() << " " << p1.paint << " " << p1.price << " " << p1.index << std::endl;
+    std::cout<< std::endl<< "P1 before assignation: " << &p1 << " " << p1.surface.printSurfaceType() << " " << p1.paint << " " << p1.price << " " << p1.index << std::endl;
     std::cout<< "P2 before assignation: " << &p2 << " " << p2.surface.printSurfaceType() << " " << p2.paint << " " << p2.price << " " << p2.index << std::endl;
     std::cout<< "P3 before assignation: " << &p3 << " " << p3.surface.printSurfaceType() << " " << p3.paint << " " << p3.price << " " << p3.index << std::endl;
     p3 = p2 = p1;
