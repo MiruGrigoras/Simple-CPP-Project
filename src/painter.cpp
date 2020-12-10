@@ -10,12 +10,12 @@
 
 namespace painting{
 
-    Painter::Painter(): paintingVector({}),
+    Painter::Painter(): paintingVector(),
     noOfPaintings(0),
     profits(0){}
 
-    Painter::Painter(const Painter &object): 
-    paintingVector(object.paintingVector), 
+    Painter::Painter(const Painter &object):
+    paintingVector(object.paintingVector),
     profits(object.profits),
     noOfPaintings(object.noOfPaintings){}
 
@@ -28,7 +28,7 @@ namespace painting{
         else{
             std::cout<< "You cannot add more paintings." <<std::endl;
         }
-        
+
     }
 
     void Painter::addPaintings(Surface surface, Paint *paint, int price){
@@ -40,7 +40,7 @@ namespace painting{
         else{
             std::cout<< "You cannot add more paintings." <<std::endl;
         }
-        
+
     }
     void Painter::sellPainting(int index){
         if(paintingVector.empty() == false ){
@@ -65,11 +65,11 @@ namespace painting{
 
     void Painter::printPaintings(){
         std::cout << "The painter has " << this->noOfPaintings << " paintings and profits "<<this->profits<<std::endl;
-        for (auto it: this->paintingVector){
+        for (Painting it: this->paintingVector){
             it.printPainting();
         }
     }
-    
+
 }
 
 #endif

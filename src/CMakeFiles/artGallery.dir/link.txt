@@ -1,1 +1,0 @@
-/usr/bin/c++    -rdynamic CMakeFiles/artGallery.dir/main.cpp.o CMakeFiles/artGallery.dir/surface.cpp.o CMakeFiles/artGallery.dir/paint.cpp.o CMakeFiles/artGallery.dir/painting.cpp.o CMakeFiles/artGallery.dir/painter.cpp.o  -o artGallery 

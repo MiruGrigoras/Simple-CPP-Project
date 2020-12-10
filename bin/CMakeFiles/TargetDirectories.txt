@@ -1,2 +1,0 @@
-/home/miru/Documents/IEP/Proiect/iepProject/src/CMakeFiles/rebuild_cache.dir
-/home/miru/Documents/IEP/Proiect/iepProject/src/CMakeFiles/edit_cache.dir

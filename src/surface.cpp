@@ -3,13 +3,15 @@
 #include <string>
 
 namespace painting{
+
+    Surface::Surface():someNumber(10){}
     Surface::Surface(SurfaceType type):surfaceType(type){}
 
     Surface::Surface(const Surface &object): surfaceType(object.surfaceType){}
 
     Surface* Surface::createSurface(){ return new Surface();}
 
-    void Surface::prepareSurface(){ 
+    void Surface::prepareSurface(){
         std::cout << "Gesso has been added on the " << this->printSurfaceType() << std::endl; }
 
     std::string Surface::printSurfaceType(){

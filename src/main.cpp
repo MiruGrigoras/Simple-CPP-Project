@@ -23,9 +23,9 @@ private:
    Main(const Main &){};
    Main& operator=(const Main &);
 public:
-    Main(){};
+    Main():someNumber(5){};
     ~Main(){};
-    int someNumber  = 5;
+    int someNumber;
     static Main* createMain(){return new Main();}
     void execute1();
     void execute2();
@@ -39,24 +39,26 @@ int main(){
     //Main m(m1);  -- cannot be done since the copy constructor is private
     //Main m=m1; --cannot be done since the copy assignment cosntructor is private
     //m.execute2();
-    
-    std::auto_ptr<Main> m(Main::createMain());
+
+    /*std::auto_ptr<Main> m(Main::createMain());
     std::cout << "Before copy constr for auto_ptr m: " << m->someNumber << " which is located: " << &m << '\n';
     std::auto_ptr<Main> m1(m);
     //std::cout << "After copy constr for auto_ptr m: " << m->someNumber << " which is located: " << &m << '\n';   --this wont work because the pointer is now null
-    std::cout << "After copy constr for auto_ptr m1: " << m1->someNumber << " which is located: " << &m1<< '\n';
-    m1->execute3();
+    std::cout << "After copy constr for auto_ptr m1: " << m1->someNumber << " which is located: " << &m1<< '\n';*/
+    Main m;
+    //Main m1(m);//private constructor -> error
+    m.execute3();
     return 0;
 }
 
 
 void Main::execute3(){
-	std::shared_ptr<Surface> s1(Surface::createSurface());
+	  std::shared_ptr<Surface> s1(Surface::createSurface());
     std::cout << "Before copy constr for shared_ptr s1: " << s1->someNumber << " which is located: " << &s1 << '\n';
     std::shared_ptr<Surface> s2(s1);
     std::cout << "After copy constr for shared_ptr s1: " << s1->someNumber << " which is located: " << &s1 << '\n';
     std::cout << "After copy constr for shared_ptr s2: " << s2->someNumber << " which is located: " << &s2 << '\n';
-    
+
 }
 
 void Main::execute1(){
@@ -108,7 +110,7 @@ void Main::execute2(){
     op3=op2;
     op3.addExtender();
     op3.getColor();
-    
+
     Painting p1(0, canvas, op4, 100);
     Painting p2, p3, p4, p5;
 
@@ -119,14 +121,10 @@ void Main::execute2(){
     std::cout<< std::endl<< "P1 after 1st assignation: " << &p1 << " " << p1.surface.printSurfaceType() << " " << p1.paint << " " << p1.price << " " << p1.index << std::endl;
     std::cout<< "P2 after 1st assignation: " << &p2 << " " << p2.surface.printSurfaceType() << " " << p2.paint << " " << p2.price << " " << p2.index << std::endl;
     std::cout<< "P3 after 1st assignation: " << &p3 << " " << p3.surface.printSurfaceType() << " " << p3.paint << " " << p3.price << " " << p3.index << std::endl;
-    
+
     p5 += p4 += p3;
     std::cout<< std::endl<< "P3 after 2nd assignation: " << &p3 << " " << p3.surface.printSurfaceType() << " " << p3.paint << " " << p3.price << " " << p3.index << std::endl;
     std::cout<< "P4 after 2nd assignation: " << &p4 << " " << p4.surface.printSurfaceType() << " " << p4.paint << " " << p4.price << " " << p4.index << std::endl;
     std::cout<< "P5 after 2nd assignation: " << &p5 << " " << p5.surface.printSurfaceType() << " " << p5.paint << " " << p5.price << " " << p5.index << std::endl;
 
 }
-
-
-
-
