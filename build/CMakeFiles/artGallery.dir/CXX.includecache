@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/rezbanandrei/Desktop/Miruna/iepProject/libs/paint.hpp
+iostream
+-
+
+/Users/rezbanandrei/Desktop/Miruna/iepProject/libs/painter.hpp
+../libs/painting.hpp
+/Users/rezbanandrei/Desktop/Miruna/iepProject/libs/painting.hpp
+vector
+-
+
+/Users/rezbanandrei/Desktop/Miruna/iepProject/libs/painting.hpp
+../libs/surface.hpp
+/Users/rezbanandrei/Desktop/Miruna/iepProject/libs/surface.hpp
+../libs/paint.hpp
+/Users/rezbanandrei/Desktop/Miruna/iepProject/libs/paint.hpp
+
+/Users/rezbanandrei/Desktop/Miruna/iepProject/libs/surface.hpp
+string
+-
+
+/Users/rezbanandrei/Desktop/Miruna/iepProject/src/main.cpp
+../libs/surface.hpp
+/Users/rezbanandrei/Desktop/Miruna/iepProject/libs/surface.hpp
+../libs/painter.hpp
+/Users/rezbanandrei/Desktop/Miruna/iepProject/libs/painter.hpp
+../libs/paint.hpp
+/Users/rezbanandrei/Desktop/Miruna/iepProject/libs/paint.hpp
+../libs/painting.hpp
+/Users/rezbanandrei/Desktop/Miruna/iepProject/libs/painting.hpp
+iostream
+-
+memory
+-
+

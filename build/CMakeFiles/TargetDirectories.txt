@@ -1,0 +1,3 @@
+/Users/rezbanandrei/Desktop/Miruna/iepProject/build/CMakeFiles/rebuild_cache.dir
+/Users/rezbanandrei/Desktop/Miruna/iepProject/build/CMakeFiles/edit_cache.dir
+/Users/rezbanandrei/Desktop/Miruna/iepProject/build/CMakeFiles/artGallery.dir
