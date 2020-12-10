@@ -3,6 +3,7 @@
 #include "../libs/paint.hpp"
 #include "../libs/painting.hpp"
 #include <iostream>
+#include <memory>
 
 using namespace painting;
 
@@ -24,9 +25,39 @@ private:
 public:
     Main(){};
     ~Main(){};
+    int someNumber  = 5;
+    static Main* createMain(){return new Main();}
     void execute1();
     void execute2();
+    void execute3();
 };
+
+
+int main(){
+    //Main m;
+    //Main m1;
+    //Main m(m1);  -- cannot be done since the copy constructor is private
+    //Main m=m1; --cannot be done since the copy assignment cosntructor is private
+    //m.execute2();
+    
+    std::auto_ptr<Main> m(Main::createMain());
+    std::cout << "Before copy constr for auto_ptr m: " << m->someNumber << " which is located: " << &m << '\n';
+    std::auto_ptr<Main> m1(m);
+    //std::cout << "After copy constr for auto_ptr m: " << m->someNumber << " which is located: " << &m << '\n';   --this wont work because the pointer is now null
+    std::cout << "After copy constr for auto_ptr m1: " << m1->someNumber << " which is located: " << &m1<< '\n';
+    m1->execute3();
+    return 0;
+}
+
+
+void Main::execute3(){
+	std::shared_ptr<Surface> s1(Surface::createSurface());
+    std::cout << "Before copy constr for shared_ptr s1: " << s1->someNumber << " which is located: " << &s1 << '\n';
+    std::shared_ptr<Surface> s2(s1);
+    std::cout << "After copy constr for shared_ptr s1: " << s1->someNumber << " which is located: " << &s1 << '\n';
+    std::cout << "After copy constr for shared_ptr s2: " << s2->someNumber << " which is located: " << &s2 << '\n';
+    
+}
 
 void Main::execute1(){
     Surface canvas(Canvas);
@@ -93,16 +124,9 @@ void Main::execute2(){
     std::cout<< std::endl<< "P3 after 2nd assignation: " << &p3 << " " << p3.surface.printSurfaceType() << " " << p3.paint << " " << p3.price << " " << p3.index << std::endl;
     std::cout<< "P4 after 2nd assignation: " << &p4 << " " << p4.surface.printSurfaceType() << " " << p4.paint << " " << p4.price << " " << p4.index << std::endl;
     std::cout<< "P5 after 2nd assignation: " << &p5 << " " << p5.surface.printSurfaceType() << " " << p5.paint << " " << p5.price << " " << p5.index << std::endl;
-    
-    
 
 }
 
-int main(){
-    Main m1;
-    //Main m(m1);  -- cannot be done since the copy constructor is private
-    //Main m=m1; --cannot be done since the copy assignment cosntructor is private
-    Main m;
-    m.execute2();
-    return 0;
-}
+
+
+

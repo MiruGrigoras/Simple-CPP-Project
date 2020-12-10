@@ -11,10 +11,12 @@ namespace painting{
     private:
         SurfaceType surfaceType;
     public:
+        int someNumber = 10;
         Surface(const Surface &object);
         Surface(SurfaceType type);
         Surface(){};
         ~Surface(){};
+        static Surface* createSurface();
         void prepareSurface();
         std::string printSurfaceType();
     };

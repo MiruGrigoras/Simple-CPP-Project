@@ -7,6 +7,8 @@ namespace painting{
 
     Surface::Surface(const Surface &object): surfaceType(object.surfaceType){}
 
+    Surface* Surface::createSurface(){ return new Surface();}
+
     void Surface::prepareSurface(){ 
         std::cout << "Gesso has been added on the " << this->printSurfaceType() << std::endl; }
 

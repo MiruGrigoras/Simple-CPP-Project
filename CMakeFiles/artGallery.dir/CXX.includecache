@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/miru/Documents/IEP/Proiect/iepProject/libs/paint.hpp
-iostream
+/home/miru/Documents/IEP/Proiect/iepProject/libs/surface.hpp
+string
 -
 
-/home/miru/Documents/IEP/Proiect/iepProject/src/paint.cpp
-../libs/paint.hpp
-/home/miru/Documents/IEP/Proiect/iepProject/libs/paint.hpp
+/home/miru/Documents/IEP/Proiect/iepProject/src/surface.cpp
+../libs/surface.hpp
+/home/miru/Documents/IEP/Proiect/iepProject/libs/surface.hpp
 iostream
 -
-string.h
+string
 -
 
